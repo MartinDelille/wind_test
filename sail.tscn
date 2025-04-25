@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2yteaesac76"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vpgw6"]
+cull_mode = 2
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_xa6x3"]
+lightmap_size_hint = Vector2i(12, 12)
+material = SubResource("StandardMaterial3D_vpgw6")
+subdivide_width = 10
+subdivide_depth = 10
+orientation = 2
+
+[node name="Sail" type="SoftBody3D"]
+mesh = SubResource("PlaneMesh_xa6x3")
+pinned_points = [132, 0, 11, 143]
+attachments/0/point_index = 132
+attachments/0/spatial_attachment_path = NodePath("")
+attachments/0/offset = Vector3(0, 0, 0)
+attachments/1/point_index = 0
+attachments/1/spatial_attachment_path = NodePath("")
+attachments/1/offset = Vector3(0, 0, 0)
+attachments/2/point_index = 11
+attachments/2/spatial_attachment_path = NodePath("")
+attachments/2/offset = Vector3(0, 0, 0)
+attachments/3/point_index = 143
+attachments/3/spatial_attachment_path = NodePath("")
+attachments/3/offset = Vector3(0, 0, 0)
