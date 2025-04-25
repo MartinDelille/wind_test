@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=3 uid="uid://cvghl4vroq88v"]
+
+[ext_resource type="Script" uid="uid://dbv0gimd4tv8s" path="res://area_3d.gd" id="1_jsuhd"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iwlsb"]
+cull_mode = 2
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_p3bod"]
+material = SubResource("StandardMaterial3D_iwlsb")
+subdivide_width = 10
+subdivide_depth = 10
+orientation = 2
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jsuhd"]
+size = Vector3(10, 10, 10)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="SoftBody3D" type="SoftBody3D" parent="."]
+mesh = SubResource("PlaneMesh_p3bod")
+pinned_points = [132, 0, 143, 11]
+attachments/0/point_index = 132
+attachments/0/spatial_attachment_path = NodePath("")
+attachments/0/offset = Vector3(0, 0, 0)
+attachments/1/point_index = 0
+attachments/1/spatial_attachment_path = NodePath("")
+attachments/1/offset = Vector3(0, 0, 0)
+attachments/2/point_index = 143
+attachments/2/spatial_attachment_path = NodePath("")
+attachments/2/offset = Vector3(0, 0, 0)
+attachments/3/point_index = 11
+attachments/3/spatial_attachment_path = NodePath("")
+attachments/3/offset = Vector3(0, 0, 0)
+
+[node name="Area3D" type="Area3D" parent="."]
+script = ExtResource("1_jsuhd")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_jsuhd")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.870562, 0, 0.492059, 0, 1, 0, -0.492059, 0, 0.870562, 0.587845, 0, 2.10026)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.756128, -0.340142, 0.559084, 0, 0.854314, 0.519758, -0.654424, -0.393003, 0.64597, 0, 0, 0)
+
+[node name="WindMarker" type="Marker3D" parent="."]
